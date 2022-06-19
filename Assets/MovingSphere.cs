@@ -31,7 +31,7 @@ public class MovingSphere : MonoBehaviour
         }
         if (Input.GetKeyDown("w")) 
         {
-            rd.AddForce(new Vector3(0, 300, 0));
+            rd.AddForce(new Vector3(0, 600, 0));
 
         
         }
