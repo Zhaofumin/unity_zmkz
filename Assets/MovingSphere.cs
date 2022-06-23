@@ -32,7 +32,7 @@ public class MovingSphere : MonoBehaviour
     void Update()
     {
         bool isGround = Physics2D.OverlapCircle(jiao.position, 0.1f, ground);
-        if (Input.GetKeyDown(KeyCode.Space)&&jump>0)
+        if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W ))&& jump>0)
         {
             rd.AddForce(new Vector3(0, 600, 0));
             jump--;
@@ -50,7 +50,7 @@ public class MovingSphere : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         rd.AddForce(new Vector3(speed * h, 0, 0));
 
-        if (!(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Space)))
+        if (!(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
         {
             rd.AddForce(new Vector3(-rd.velocity.x * js, 0, 0));
 
